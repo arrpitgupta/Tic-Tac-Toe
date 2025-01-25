@@ -1,0 +1,134 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap");
+
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #ffffff;
+  --font-primary: "Baloo Bhaina 2", cursive;
+  --font-secondary: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-secondary);
+  background-color: #f4f4f9;
+  color: var(--primary-color);
+  height: 100vh;
+}
+
+.game {
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.info {
+  font-size: 1.5rem;
+  font-family: var(--font-primary);
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.box:hover {
+  transform: scale(1.1);
+  background-color: #e8f5e9;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+.imgbox img {
+  margin-top: 20px;
+  width: 0;
+  transition: width 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.line {
+  position: absolute;
+  height: 5px;
+  background-color: var(--primary-color);
+  transform-origin: left center;
+  transition: all 0.3s ease;
+  width: 0;
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+
+  .info {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .info {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}

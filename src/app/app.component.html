@@ -1,0 +1,26 @@
+<div class="game">
+  <div class="info">{{ info }}</div>
+  <div class="board">
+    <div
+      *ngFor="let row of [0, 1, 2]; let rowIndex = index"
+      class="row"
+    >
+      <div
+        *ngFor="let col of [0, 1, 2]; let colIndex = index"
+        class="box"
+        (click)="onBoxClick(rowIndex, colIndex)"
+      >
+        <span class="boxtext">{{ board[rowIndex][colIndex] }}</span>
+      </div>
+    </div>
+  </div>
+  <button (click)="resetGame()">Reset</button>
+  <div class="imgbox">
+    <img src="winner.png" [style.width]="winnerImageWidth" alt="Winner">
+  </div>
+  <div
+    class="line"
+    [style.transform]="lineTransform"
+    [style.width]="lineWidth"
+  ></div>
+</div>
